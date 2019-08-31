@@ -27,7 +27,7 @@ class App extends React.Component {
     this.setState({ // Without set state, any changes you attempt to make won't be reflected in the app's state.
       todos: this.state.todos.map(todo => {
         if (id === todo.id) {
-          return {...todo, completed: !todo.completed} // Why is this in a bracket vs parenthesis? Ask on Monday.
+          return {...todo, completed: !todo.completed} // Returning an object w/ original to-do array, which is why a bracket is needed
         }
         else {
           return todo;
@@ -46,6 +46,15 @@ class App extends React.Component {
     })
   }
 
+  filterCompleted = () => {
+    console.log('filter complete: ')
+    this.setState({
+        todos: this.state.todos.filter(todo => {
+            return !todo.completed // create a new array of the todo's that have not been completed
+        })
+    });
+}
+
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
@@ -57,7 +66,10 @@ class App extends React.Component {
         <TodoList todos={this.state.todos}
                   toggleCompleted={this.toggleCompleted}
         />
-        <TodoForm addTodo={this.addTodo}/>
+        <TodoForm addTodo={this.addTodo} 
+                  filterCompleted={this.filterCompleted}
+        /> 
+        {/* Text to the left can be anything (although it helps to keep consistent). Right must match function name. */}
       </div>
     );
   }

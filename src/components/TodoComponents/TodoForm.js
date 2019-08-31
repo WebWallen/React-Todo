@@ -17,7 +17,17 @@ class TodoForm extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
         this.props.addTodo(this.state.newTodo);
+        this.setState({ newTodo: ""});
     }
+
+    // filterCompleted = () => {
+    //     console.log('filter complete: ')
+    //     this.setState({
+    //         todos: this.props.todos.filter(todo => {
+    //             return !todo.completed // create a new array of the todo's that have not been completed
+    //         })
+    //     });
+    // }
 
     render() {
         return (
@@ -29,6 +39,7 @@ class TodoForm extends React.Component {
                        placeholder="Add a new Todo" 
                 />
                 <button type="submit">Add a new todo</button>
+                <button onClick={this.props.filterCompleted}>Clear completed</button>
             </form>
         )
     }
