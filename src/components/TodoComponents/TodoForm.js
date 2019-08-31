@@ -1,4 +1,5 @@
 import React from "react";
+import "./Todo.css";
 
 class TodoForm extends React.Component {
     constructor (props) {
@@ -20,26 +21,18 @@ class TodoForm extends React.Component {
         this.setState({ newTodo: ""});
     }
 
-    // filterCompleted = () => {
-    //     console.log('filter complete: ')
-    //     this.setState({
-    //         todos: this.props.todos.filter(todo => {
-    //             return !todo.completed // create a new array of the todo's that have not been completed
-    //         })
-    //     });
-    // }
-
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type="text" 
+                <input className="form-field"
+                       type="text" 
                        name="newTodo" 
                        value={this.state.newTodo} 
                        onChange={this.handleChange}
-                       placeholder="Add a new Todo" 
+                       placeholder="Type your task here" 
                 />
-                <button type="submit">Add a new todo</button>
-                <button onClick={this.props.filterCompleted}>Clear completed</button>
+                <button className="form-field" type="submit">Add New Task</button>
+                <button className="form-field" onClick={this.props.filterCompleted}>Clear Completed Tasks</button>
             </form>
         )
     }
