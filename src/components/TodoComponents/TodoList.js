@@ -2,23 +2,23 @@ import React from "react";
 import Todo from "./Todo";
 
 class TodoList extends React.Component {
-    constructor (props) {
-        super(props); // pulls in the props data from app so they can be accessed in render with the "this" keyword
-        console.log('TodoList', props)
+    constructor(props) {
+        super(props); // pulls in props data from app so they can be accessed in render with the "this" keyword
+        console.log('TodoList', props);
     }
 
-    render () {
+    render() {
         return (
             <div>
-                {this.props.todos.map(todo => 
+                {this.props.todos.map(todo =>  // why can't I put a bracket here witout breaking the code?
                     <Todo todo={todo} 
                           key={todo.id}
-                          toggleCompleted={this.props.toggleCompleted}  
+                          toggleCompleted={this.props.toggleCompleted}
                     />
                 )}
             </div>
         )
     }
-}
+}    
 
 export default TodoList;

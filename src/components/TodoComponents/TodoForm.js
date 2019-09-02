@@ -2,10 +2,10 @@ import React from "react";
 import "./Todo.css";
 
 class TodoForm extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
-            newTodo: '' // must be an empty string versus null so the handleChange behaves as intended (expects a non-empty string)
+            newTodo: "" // must be an empty string instead of null, because the handleChange function expects a non-empty string.
         }
     }
 
@@ -20,16 +20,16 @@ class TodoForm extends React.Component {
         this.props.addTodo(this.state.newTodo);
         this.setState({ newTodo: ""});
     }
-
+    
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
                 <input className="form-field"
-                       type="text" 
-                       name="newTodo" 
-                       value={this.state.newTodo} 
+                       type="text"
+                       name="newTodo"
+                       value={this.state.newTodo}
                        onChange={this.handleChange}
-                       placeholder="Type your task here" 
+                       placeholer="Type your task here..."
                 />
                 <button className="form-field" type="submit">Add New Task</button>
                 <button className="form-field" onClick={this.props.filterCompleted}>Clear Completed Tasks</button>

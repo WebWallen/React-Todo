@@ -25,10 +25,10 @@ class App extends React.Component {
   }
 
   toggleCompleted = (id) => {
-    this.setState({ // Without set state, any changes you attempt to make won't be reflected in the app's state.
+    this.setState({ // setState must be declared or any changes made to the app won't be reflected in state.
       todos: this.state.todos.map(todo => {
         if (id === todo.id) {
-          return {...todo, completed: !todo.completed} // Returning an object w/ original to-do array, which is why a bracket is needed
+          return {...todo, completed: !todo.completed} // Returning an object w/ original to-do array, so it must be inside a bracket.
         }
         else {
           return todo;
@@ -37,9 +37,9 @@ class App extends React.Component {
     })
   }
 
-  addTodo = task => {
+  addTodo = task => { // must be set in the main app component because that's where state lives
     this.setState({
-      todos: [...this.state.todos, {
+      todos: [...this.state.todos, { // array of objects
         task: task,
         id: Date.now(),
         completed: false
@@ -48,28 +48,41 @@ class App extends React.Component {
   }
 
   filterCompleted = () => {
-    console.log('filter complete: ')
+    console.log("Filter complete: ");
     this.setState({
-        todos: this.state.todos.filter(todo => {
-            return !todo.completed // create a new array of the todo's that have not been completed
-        })
-    });
-}
+      todos: this.state.todos.filter(todo => {
+        return !todo.completed // create a new array of the todo's that have not been completed yet
+      })
+    })
+  }
 
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
+
   render() {
     console.log(this.state);
     return (
       <div className="to-do-app">
         <h2>Today's Most Important Tasks</h2>
-        <p><TodoList todos={this.state.todos}
-                  toggleCompleted={this.toggleCompleted}
-        /></p>
-        <TodoForm addTodo={this.addTodo} 
+      </div>
+    )
+  }
+
+
+  render() {
+    console.log(this.state);
+    return (
+      <div className="to-do-app">
+        <h2>Today's Most Important Tasks</h2>
+        <p>
+          <TodoList todos={this.state.todos}
+                    toggleCompleted={this.toggleCompleted}
+          />
+        </p>
+        <TodoForm addTodo={this.addTodo}
                   filterCompleted={this.filterCompleted}
-        /> 
+        />
         {/* Text to the left can be anything (although it helps to keep consistent). Right must match function name. */}
       </div>
     );
