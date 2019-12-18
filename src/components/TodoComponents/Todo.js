@@ -8,9 +8,9 @@ class Todo extends React.Component {
 
     render() {
         return (
-            <div onClick={() => this.props.toggleCompleted(this.props.todo.id)} // must attach ID to get correct to-do item.
-                 className={this.props.todo.completed ? "completed" : ""}> {/* On click, add or remove the class name "completed" */}
-                 {this.props.todo.task}     
+            <div onClick={() => this.props.toggleCompleted(this.props.todo.id)}
+                 className={this.props.todo.completed ? "completed" : ""}>
+                <p>{this.props.todo.task}</p>
             </div>
         )
     }
