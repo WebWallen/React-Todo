@@ -1,6 +1,6 @@
 # React To Do List App
 
-I know... you've seen a thousand to-do apps. But several smart people say they're one of the easiest ways to get comfortable with a different syntax or coding language. Thus, this felt like a good way to learn how class components work.
+I know... you've seen a thousand to-do list apps. But several smart people say they're one of the easiest ways to get comfortable with a different syntax or coding language. Thus, this felt like a good way to learn how class components work.
 
 State hooks are quickly replacing class components, but I imagine you'll still see this syntax in the wild, since it would be difficult to refactor a large codebase as soon as one tradition rises up to replace another one. So this app was good practice just to be safe!
 
