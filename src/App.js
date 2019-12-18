@@ -5,12 +5,12 @@ import TodoForm from "./components/TodoComponents/TodoForm";
 
 const todoData = [
   {
-    task: 'Organize Garage',
+    task:"Solve All the World's Problems",
     id: 1528817077286,
     completed: false
   },
   {
-    task: 'Bake Cookies',
+    task: 'Make To-Do List App',
     id: 1528817084358,
     completed: true
   }
