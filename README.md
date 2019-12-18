@@ -7,7 +7,7 @@ State hooks are quickly replacing class components, but I imagine you'll still s
 ## How the App Works
 
 - Type a new "to-do" in the text box and click the "Add New Task" button to (you guessed it) add a new task.
-- Cross off to-do items by clicking on them (they should turn red, which means the class name changed to "complete."
+- Cross off to-do items by clicking on them (they should turn red, which means the class name changed to "complete").
 - Clear all of the accomplished to-do's by clicking on the "Clear Completed Tasks" button (which causes them to vanish).
 
 ## Live Link
