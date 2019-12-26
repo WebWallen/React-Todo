@@ -1,0 +1,47 @@
+.completed {
+    text-decoration: line-through;
+    color: red;
+}
+
+input {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    width: 50vw;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    width: 50vw;
+    background: red;
+    color: white;
+    transition: 0.6s
+}
+
+button:hover {
+    background: white;
+    color: red;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+    background: red;
+    color: white;
+    width: 50vw;
+    margin: 0 auto;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+p {
+    text-align: center;
+}
+
+div .to-do-app {
+    border: 1px solid black;
+    padding: 20px;
+    width: 50vw;
+    margin: 20px auto;
+}
